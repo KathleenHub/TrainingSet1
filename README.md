@@ -4,5 +4,5 @@ while i have a phd degree in bioscience engineering specialised in expanding hum
 
 So in order to advance my knowledge of coding i am following the CS50x course thaught on Edx.
 I watched all lectures and the insights of explaining the "underneath the hood" principles of C are very interesting.
-However I'm more interesting to use python and javascript in practice since this relates most to the work im currently doing at my job,
+However I'm more interested to use python and javascript in practice since this relates most to the work im currently doing at my job,
 therefore i'm only executing these problemsets here in github
