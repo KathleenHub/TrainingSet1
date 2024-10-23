@@ -4,19 +4,22 @@
         <title>Hello</title>
         <script>
             
-            function hello() {
-                const heading = document.querySelector('h1'); 
-                <!-- you can use let for something that will change or const for something that will not change-->
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelector('form').onsubmit = function() {
+                    const name = document.querySelector('#name').value;
+                    alert(`Hello, ${name}`);
+                };
 
-                if (heading.innerHTML === 'Hello!'){
-                    heading.innerHTML = 'Goodbye!';
-                } else {heading.innerHTML = 'Hello!';}
-            }
+            });
+
  
         </script>
     </head>
     <body>
         <h1>Hello!</h1>
-        <button onclick="hello()">Click here</button>
+        <form>
+            <input autofocus id="name" placeholder="Name" type="text">
+            <input type="submit">
+        </form>
     </body>
 </html>
