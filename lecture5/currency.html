@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Currency</title>
+    <script>
+        // ajax: asynchronous request
+        document.addEventListener('DOMContentLoaded', function (){
+
+            document.querySelector('form').onsubmit = function() {
+                
+                fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd,eur,gbp')
+                // fetch('https://api.exchangeratesapi.io/latest?base=USD') you need a key in 2024 for this
+                // get a promise back
+                .then(response => response.json())  // Parse the response as JSON
+                .then(data => {
+                    const currency = document.querySelector('#currency').value.toLowerCase();
+                    const rate = data.bitcoin[currency];
+                    if (rate !== undefined) {
+                        document.querySelector('#result').innerHTML = `Current Bitcoin price in ${currency}: $${rate}`
+                    } else {
+                        document.querySelector('#result').innerHTML = `Invalid currency.`;
+
+                    }
+                    
+                })  
+                .catch(error=>{
+                    console.log('Error:', error);
+                }
+
+                )
+                return false;
+            }
+        })
+    </script>
+</head>
+<body>
+    <form>
+        <input id="currency" placeholder="Currency" type="text" >
+        <input type="submit" value="Convert">
+    </form>
+    <div id = "result">
+    </div>
+</body>
+</html>
