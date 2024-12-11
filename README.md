@@ -3,7 +3,5 @@ We work using agile principles and releaseing a new software version every two w
 However I have been thrown into coding to bridge the gap between the developpers and the pharma related customers, 
 while i have a phd degree in bioscience engineering specialised in expanding human mesenchymal stem cells.
 
-So in order to advance my knowledge of coding i am following the CS50x course thaught on Edx.
-I watched all lectures and the insights of explaining the "underneath the hood" principles of C are very interesting.
-However I'm more interested to use python and javascript in practice since this relates most to the work im currently doing at my job,
-therefore i'm only executing these problemsets here in github
+So in order to advance my knowledge of coding i have followed the CS50x and CSWOw courses thaught on Edx.
+I executed the problems shown in the lectures of CS50w here on my github account to have a feeling of writing the code myself.
