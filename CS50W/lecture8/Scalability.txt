@@ -1,0 +1,58 @@
+LOAD BALANCER
+=> directs requests to servers (horizontal scaling using multiple servers)
+- random choice (not even distribution)
+- round robin 
+    (assign each user to the next server, going through all servers one and then go again)
+    (uneven if some requests take much longer)
+- fewest connections
+    (pick which of the current servers has fewest connections)
+    (best balanced but more expansive due to computing which has fewest connections)
+
+what whith remembering the user and their session.
+=> you get first server nr1 and this remembers your session, next time you get server n2 and doesnt remembering
+- sticky session: remembers your server and directs you to the same 
+    (one server much more load)
+- sessions in database
+- client-side sessions (cookies: store info)
+
+BENCHMARKING
+estimate how many servers you need
+- autoscaling: increase or decrease the amount of servers based on the amount of trafic 'in real time'
+
+SINGLE POINT OF FAILURE
+- if you only have one server this is a risk
+- one loadbalancer is also a risk
+- ome database is also a risk
+
+HEARTBEAT
+=> load balancer pings the servers to check if they are still 'alive'
+
+DATABASE
+- django uses sqlite but not good at scaling
+DATABASE PARTITIONING
+- vertical (storing info in different tables: airport table (airport id), flights table (origing id, destination id))
+- horizontal: flights -> domestic flights and international flights
+    => improve efficientcy on search
+    => expensive to recombine the tables
+DATABASE REPLICATION
+- single-primary replication 
+    only one to which you can write to
+    update the replicates from which you can read
+- multi-primary replication
+    read and write from all databases
+    trade off with the complexity of updating: confict (uniqueness, delete)
+
+CACHING
+= storing information
+- client-side caching 
+    webbrowser can save website info like images, css
+    Cache-Control: max-age=86400 (amount of seconds to store in the webbrowser)
+    if resource changes you still see the old cached image even when reloading
+    -> make a hard refresh of the cached info
+    inclucde an ETag: "1328725E93805334"
+    only request this ETag to see if you can used the cached version or if it must be reloaded
+- server-side caching
+    django has a cache framework
+    * Per-view caching
+    * template fragment caching
+    * low-level cache API

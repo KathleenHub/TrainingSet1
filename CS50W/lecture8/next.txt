@@ -1,0 +1,25 @@
+OTHER WEB FRAMEWORKS
+SERVER-SIDE
+- express.js
+- ruby on rails
+
+CLIENT-SIDE
+- angularJS
+- react
+- vue.js
+
+DEPLOYING WEBSITES
+- amazon web services
+- github pages
+- google cloud
+- heroku
+- microsoft azure 
+
+LESSONS LEARNED
+- HTML and CSS (structure page)
+- git 
+- python (object oriented programming)
+- django (python framework to build webapplication dealing with data with sql, models, migration)
+- JavaScript (client side, user interface, manipulate the DOM, eventhandler) ex: react
+- testing and CI/CD
+- scalability and security

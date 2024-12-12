@@ -1,0 +1,48 @@
+GIT
+=> OPEN-SOURCE SOFTWARE
+never put credentials in git repository
+
+HTML
+pishing attack: <a href="url1"> url2 </a>
+it looks like you will be directed to url2 but it is actually url1
+
+CRYPTOGRAPHY
+=> avoid interception by routers or other middle mans
+
+- secret-key cryptography
+    Key + plaintext => ciphertext
+    send: ciphertext + key => plaintext
+
+- public-key cryptography
+    public key (encrypt) + private key(decrypt)
+
+    plaintext + public key (from receiver) -> ciphertext
+    ciphertext + private key (from receiver) -> plain text
+
+SQL
+store passwords using one way hashfunction. store username+hash.
+match the hash stored and hash created after using hashfunction on the password
+
+INFORMATION LEAK
+- if you give an error when email adress doesnt exist
+- response time after request
+
+SQL Injection
+    SELECT * FROM users 
+    WHERE username = username AND password = password;
+    if you use a username = hacker" --
+    WHERE username = "hacker" --" AND password = password;
+    the -- will remove all the rest of this line (comment it out)
+- escape these issues (->use django framework)
+
+API
+- rate limiting (DOS, denial of service), limit the amount of requests one user can ask
+- route authentication (permission, API key)
+    dont put API keys in sourcecode of webapp
+    environment variables
+
+JAVASCRIPT
+cross-site scripting
+cross-site request forgery
+
+add csrf_token (cross-site request forgery, changes every session)
