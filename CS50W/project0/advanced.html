@@ -1,0 +1,42 @@
+<!-- Your website should have at least three pages: one for Google Advanced Search.
+ On each of the other two pages, there should be a link in the upper-right to go back to Google Search. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Advanced Search</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="upper-right-links">
+        <a href="index.html">Google Search</a>
+    </div>
+    <div class="search-container">
+        <h1>Advanced Search</h1>
+        <h2>Find pages with…</h2>
+        <form action="https://www.google.com/search" method="get">
+            <label>
+                all these words:
+                <input type="text" name="as_q" class="search-bar">
+            </label>
+            <label>
+                this exact word or phrase:
+                <input type="text" name="as_epq" class="search-bar">
+            </label>
+            <label>
+                any of these words:
+                <input type="text" name="as_oq" class="search-bar">
+            </label>
+            <label>
+                none of these words:
+                <input type="text" name="as_eq" class="search-bar">
+            </label>
+            <div class="buttons">
+                <button type="submit" class="advanced-btn">Advanced Search</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
