@@ -1,0 +1,33 @@
+more info: https://docs.djangoproject.com/en/5.1/intro/tutorial01/
+---
+
+PART1:
+
+django-admin startproject PPROJECT_NAME
+python manage.py runserver
+python manage.py startapp APP_NAME
+
+in APP_NAME/views.py:
+    from django.http import HttpResponse
+    def index(request):
+        return HttpResponse("Hello, world. You're at the polls index.")
+
+in APP_NAME/urls.py:
+    from django.urls import path
+    from . import views
+    urlpatterns = [
+        path("", views.index, name="index"),
+    ]
+
+in PROJECT_NAME/urls.py:
+    from django.contrib import admin
+    from django.urls import include, path
+    urlpatterns = [
+        path("APP_NAME/", include("APP_NAME.urls")),
+        path("admin/", admin.site.urls),
+    ]
+
+python manage.py runserver
+---
+
+PART2:

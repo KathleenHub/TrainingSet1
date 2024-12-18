@@ -1,0 +1,47 @@
+SEARCH PROBLEMS
+
+INITIAL STATE
+STATE
+ACTIONS
+TRANSITION MODEL
+STATE SPACE
+GOAL STATE, GOAL TEST
+PATH COST FUNCTION
+
+Optimal solution: find the set of actions that takes the initial state to the goal state while minimizing the path cost
+
+NODE: data structure (state, parent, action, path cost)
+
+Approach: 
+1. start with frontier(all things we could explore next) that contains initial state
+2. repeat
+    - if frontier is empty, then no solution
+    - remove a node from frontier
+    - if node contains goal state, return the solution
+    - expand node(look at the neighbours), add resulting nodes to the frontier
+Problems:
+- back and forth between 2 states, no memory
+=> dont go back to previous state
+
+Revised approach:
+1. start with frontier with initial state
+2. start with empty explored set
+3. repeat:
+    - if frontier is empty, then no solution
+    - remove a node from frontier
+    - if node contains goal state, return the solution
+    - add node to explored set
+    - expand node(look at the neighbours), add resulting nodes to the frontier if they arent in the explored set
+
+how to chose the next node to remove:
+STACK
+- last-in first-out data type
+=> DEPTH-first search (go deep)
++ can find faster but might not find optimal solution
+
+QUEUE
+- first-in first-out data type
+=> BREADTH-first search BFS (go wide, shallow)
++ can find optimal solution, but needs to explore more states
+
+--------
