@@ -199,7 +199,6 @@ if __name__ == "__main__":
     filename = sys.argv[1]
     maze = Maze(filename)
     maze.solve()
-    maze.print()
     print("states explored:", maze.num_explored)
     maze.print()
     output_image(maze, "maze_solution.png", show_solution=True, show_explored=True)

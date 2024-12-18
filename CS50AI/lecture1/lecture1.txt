@@ -44,4 +44,56 @@ QUEUE
 => BREADTH-first search BFS (go wide, shallow)
 + can find optimal solution, but needs to explore more states
 
+
+Uninformed search
+Informed search
+- Greedy Best-First Search (GBFS)
+    estimated if close to goal: heuristic function h(n)
+    eg: manhattan distance (estimate distance ignoring the walls)
+
+A* search
+=> lowest value of g(n)+h(n)
+- how long it took us to get to this state
+- g(n) = cost to reach node (#steps taken to that state)
+- h(n) = estimated cost to goal
++ H(n) must be admissible, not overestimate the true cost
++ h(n) must be consistent (for n and n' with step cost c, h(n)<=h(n')+c)
+
+ADVERSARIAL search
+eg: game, 3 on a row
+MINIMAX 2 player games
+- s0: initial state
+- players(s): which players turn
+- actions: legal moves
+- results(s,a)
+- terminales
+- utilities
+RECURSIVE algorithm
+0. given state s:
+repeat
+1. max picks action that produces highest value of minvalue(results(s,a))
+2. min picks action that produces lowest values of maxvalue(results(s,a))
+
+function max-value(state):
+    if Terminal(state):
+        return utility(state)
+    v=-inf 
+    for action in actions(state):
+        v=max(v, min-value(result(state,action)))
+    return v
+
+function min-value(state):
+    if Terminal(state):
+        return utility(state)
+    v=+inf 
+    for action in actions(state):
+        v=min(v, max-value(result(state,action)))
+    return v
+
+DEPTH-LIMITED minimax
+evaluation function: estimate expected utility
+eg: amount of pieces left on the board, type of pieces left on the board
+
+
+
 --------
